@@ -1,4 +1,4 @@
-var randomBtn = document.querySelector('.btn');
+var randomBtn = document.querySelector('.btn-2');
 var body = document.querySelector('body')
 
 var results = document.createElement('div');
