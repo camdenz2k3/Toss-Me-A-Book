@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <button id="random">Button</button>
-        <main id="card">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss Me A Book</title>
+    <link rel="stylesheet" href="./Develop/Assets/Style.css" />
+</head>
+<body>
+    <header class="header">
+        <h1 class="text-primary">Toss Me a Book</h1>
+    </header>
+    <h2 class="looking-for">If you know what you are looking for:</h2>
+    <form id="search-form">
+        <input id="search-input" class="form-input" placeholder="Search!">
+        <select id="format-input" class="form-input">
+            <option value="" disabled selected>search</option>
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="genre">Genre</option>
+        </select>
+        <button class="btn">Search</button>
+    </form>
 
-        </main>
-        <script src="Develop/Assets/javascript.js"></script>
-    </body>
+    
+    <script src="./Develop/Assets/javascript.js"></script>
+</body>
 </html>
