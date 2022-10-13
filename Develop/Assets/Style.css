@@ -1,0 +1,4 @@
+/* allows for different sections to be hidden if it has this data attribute */
+[data-state="hidden"] {
+    display: none;
+}

@@ -1,5 +1,9 @@
 var randomBtn = document.querySelector('.btn-2');
 var body = document.querySelector('body')
+var favoritesLink = document.getElementById('favorites-list');
+var homeLink = document.getElementById('home');
+var homePage = document.getElementById('home-page');
+var favoritesList = document.getElementById('favorites');
 
 var results = document.createElement('div');
 body.appendChild(results);
@@ -74,3 +78,13 @@ function getRandomBook(event) {
 }
 
 randomBtn.addEventListener('click', getRandomBook)
+
+favoritesLink.addEventListener('click', function() {
+    homePage.setAttribute('data-state', 'hidden');
+    favoritesList.setAttribute('data-state', 'visible');
+})
+
+homeLink.addEventListener('click', function() {
+    homePage.setAttribute('data-state', 'visible');
+    favoritesList.setAttribute('data-state', 'hidden');
+})
