@@ -11,22 +11,25 @@
     <header class="header">
         <h1 class="text-primary">Toss Me a Book</h1>
     </header>
-    <div class="">
-        <h2 class="looking-for">If you know what you are looking for:</h2>
-        <form id="search-form">
-            <input id="search-input" class="form-input" placeholder="Search!">
-            <select id="format-input" class="form-input">
-                <option value="" disabled selected>categories</option>
-                <option value="title">Title</option>
-                <option value="author">Author</option>
-                <option value="genre">Genre</option>
-            </select>
-            <button class="btn">Search</button>
-        </form>
-    </div>
-    
-        <h2 class="looking-for">If you do not know what you are looking for:</h2>
-        <button class="btn-2">NYT Best Seller Random Book</button>
+    <main data-state="visible">
+        <div id="criteria-section">
+            <h2 class="looking-for">If you know what you are looking for:</h2>
+            <form id="search-form">
+                <input id="search-input" class="form-input" placeholder="Search!">
+                <select id="format-input" class="form-input">
+                    <option value="" disabled selected>categories</option>
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="genre">Genre</option>
+                </select>
+                <button class="btn">Search</button>
+            </form>
+        </div>
+        <div id="best-seller">
+            <h2 class="looking-for">If you do not know what you are looking for:</h2>
+            <button class="btn-2">NYT Best Seller Random Book</button>
+        </div>
+    </main>
     <section id="favorites" data-state="hidden">
 
     </section>
