@@ -1,14 +1,47 @@
+var criteriaBtn = document.querySelector('.btn');
 var randomBtn = document.querySelector('.btn-2');
 var body = document.querySelector('body')
 var favoritesLink = document.getElementById('favorites-list');
 var homeLink = document.getElementById('home');
 var homePage = document.getElementById('home-page');
 var favoritesList = document.getElementById('favorites');
+var searchInput = document.getElementById('search-input');
+var selectCat = document.getElementById('format-input')
 
 var results = document.createElement('div');
 body.appendChild(results);
 
 var APIKey = 'wb2uvHErZufqaDA4aEQjDBE7jQBpEfkX';
+
+
+
+function getCriteriaBook(event) {
+    event.preventDefault()
+
+    
+
+    while (results.hasChildNodes()) {
+        results.removeChild(results.firstChild);
+    }
+
+    var inputValue = searchInput.value 
+    console.log(inputValue)
+
+    var selectValue = selectCat.value
+    console.log(selectValue)
+
+    fetch('https://openlibrary.org/search.json?' + selectValue + "=" + inputValue)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(book){
+        console.log(book)
+        var listBooks = book.docs
+        console.log(listBooks)
+        var bookRandom = listBooks[Math.floor(Math.random() * listBooks.length)]
+        console.log(bookRandom)
+    })
+}
 
 function getRandomBook(event) {
     event.preventDefault()
@@ -76,6 +109,8 @@ function getRandomBook(event) {
 
     })
 }
+
+criteriaBtn.addEventListener('click', getCriteriaBook)
 
 randomBtn.addEventListener('click', getRandomBook)
 
