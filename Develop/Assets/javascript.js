@@ -55,6 +55,28 @@ function getCriteriaBook(event) {
         results.appendChild(criteriaAuthor);
 
 
+        //Possibly create function in global scope
+        var newBookBtn = document.createElement('button');
+        newBookBtn.textContent = 'Choose New Book';
+        results.appendChild(newBookBtn);
+
+        var favIcon = document.createElement('i');
+        favIcon.setAttribute('class', 'fa-regular fa-heart');
+        results.appendChild(favIcon);
+
+        newBookBtn.addEventListener('click',getCriteriaBook)
+
+        favIcon.addEventListener('click', function() {
+            if (favIcon.classList.contains('fa-regular')) {
+                favIcon.classList.remove('fa-regular')
+                favIcon.classList.add('fa-solid')
+            } else if (favIcon.classList.contains('fa-solid')) {
+                favIcon.classList.remove('fa-solid')
+                favIcon.classList.add('fa-regular')
+            }
+        })
+
+
     })
 }
 
