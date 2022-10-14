@@ -40,6 +40,21 @@ function getCriteriaBook(event) {
         console.log(listBooks)
         var bookRandom = listBooks[Math.floor(Math.random() * listBooks.length)]
         console.log(bookRandom)
+
+
+        var criteriaImage = document.createElement('img');
+        criteriaImage.setAttribute('src', 'https://covers.openlibrary.org/b/isbn/' + bookRandom.isbn[0] + '-L.jpg')
+        results.appendChild(criteriaImage)
+
+        var criteriaTitle = document.createElement('h2');
+        criteriaTitle.textContent = bookRandom.title;
+        results.appendChild(criteriaTitle);
+
+        var criteriaAuthor = document.createElement('h3');
+        criteriaAuthor.textContent = bookRandom.author_name;
+        results.appendChild(criteriaAuthor);
+
+
     })
 }
 
