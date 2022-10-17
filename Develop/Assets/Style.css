@@ -2,3 +2,54 @@
 [data-state="hidden"] {
     display: none;
 }
+/* header css*/
+header {
+    text-align: left;
+  background: #1b6273;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 25px;
+  border-bottom: #E1C16E;
+}
+
+text-primary {
+    font-family: URW Chancery L, cursive
+}
+
+/*body coloring */
+body {
+    background-color: #1b6273;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+
+/*buttons*/
+button {
+    border: solid #b5a642;
+    border-radius: 20px;
+    background-color:  #25356f ;
+    color: white;
+    border-width: 1px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color:  #3a53ae;
+
+
+}
+
+img {
+    max-height: 300px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
