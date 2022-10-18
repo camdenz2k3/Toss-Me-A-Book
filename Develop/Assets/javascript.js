@@ -6,7 +6,10 @@ var homeLink = document.getElementById('home');
 var homePage = document.getElementById('home-page');
 var favoritesList = document.getElementById('favorites');
 var searchInput = document.getElementById('search-input');
-var selectCat = document.getElementById('format-input')
+var selectCat = document.getElementById('format-input');
+var searchBtn = document.querySelector('.search');
+var closeBtn = document.querySelector('.delete');
+var modal = document.querySelector('.modal');
 
 var results = document.createElement('div');
 homePage.appendChild(results);
@@ -102,6 +105,7 @@ function removeFavorite() {
 
 function getCriteriaBook(event) {
     event.preventDefault()
+    modal.classList.remove('is-active')
 
     while (results.hasChildNodes()) {
         results.removeChild(results.firstChild);
@@ -233,7 +237,6 @@ function getRandomBook(event) {
     })
 }
 
-criteriaBtn.addEventListener('click', getCriteriaBook)
 
 randomBtn.addEventListener('click', getRandomBook)
 
@@ -248,6 +251,18 @@ homeLink.addEventListener('click', function() {
     homePage.setAttribute('data-state', 'visible');
     favoritesList.setAttribute('data-state', 'hidden');
 })
+
+criteriaBtn.addEventListener('click', function() {
+    modal.classList.add('is-active')
+    searchBtn.addEventListener('click', getCriteriaBook)
+    closeBtn.addEventListener('click', function() {
+        modal.classList.remove('is-active')
+    })
+})
+
+
+
+
 
 getSavedBooks()
 renderFavorites()

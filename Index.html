@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
     <link rel="stylesheet" href="./Develop/Assets/Style.css" />
+    
 </head>
 <body>
     <header class="header">
@@ -18,17 +19,36 @@
     <main id="home-page" data-state="visible">
         <div id="criteria-section">
             <h2 class="looking-for">If you know what you are looking for:</h2>
-            <form id="search-form">
-                <input id="search-input" class="form-input" placeholder="Search!">
-                <select id="format-input" class="form-input">
-                    <option value="" disabled selected>categories</option>
-                    <option value="title">Title</option>
-                    <option value="author">Author</option>
-                    <option value="subject">Subject</option>
-                </select>
-                <button class="btn">Search</button>
-            </form>
+           
+        <button class="btn">Search with criteria!</button>
+
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Search for a book with specific criteria!</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <p><strong>Title: </strong>Will find any book with the words searched in the title field.</p></br>
+                <p><strong>Author: </strong>Will find authors with the words typed into the search bar.</p></br>
+                <p><strong>Subject: </strong>Will find any books about the words typed into the search bar.</p></br>
+                <form id="search-form">
+                    <input id="search-input" class="form-input" placeholder="Search!">
+                    <select id="format-input" class="form-input">
+                        <option value="" disabled selected>categories</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="subject">Subject</option>
+                    </select>
+                    <button class = "search">Search</button>
+                </form>
+              </section>
+            </div>
+          </div>
         </div>
+
+
 
         <div id="best-seller">
             <h2 class="looking-for">If you do not know what you are looking for:</h2>
@@ -41,5 +61,7 @@
     </section>
 
     <script src="./Develop/Assets/javascript.js"></script>
+    
+
 </body>
 </html>
