@@ -4,11 +4,10 @@
 }
 /* header css*/
 header {
-    text-align: left;
+    text-align: center;
   background: #1b6273;
   color: white;
   font-size: 30px;
-  margin-bottom: 25px;
   border-bottom: #E1C16E;
 }
 
@@ -18,11 +17,20 @@ text-primary {
 
 /*body coloring */
 body {
-    background-color: #1b6273;
+    background-color: #0d1134;
     background-size: cover;
     min-height: 100vh;
 }
 
+main
+{
+    margin: auto;
+    width: 50%;
+    background-color: #f2eecb;
+    padding: 10px;
+    min-height: 100vh;
+    text-align: center;
+}
 
 
 /*buttons*/
