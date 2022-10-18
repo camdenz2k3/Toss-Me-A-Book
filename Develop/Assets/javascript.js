@@ -47,7 +47,7 @@ function renderFavorites() {
         console.log(savedBook)
 
         var card = document.createElement('div');
-        card.setAttribute('class', 'card');
+        card.setAttribute('class', 'card column is-full');
         favoritesList.appendChild(card);
 
         var cardImg = document.createElement('div');
@@ -145,7 +145,6 @@ function getCriteriaBook(event) {
         newBookBtn.textContent = 'Choose New Book';
         results.appendChild(newBookBtn);
         
-        //Possibly create function in global scope
         var favIcon = document.createElement('i');
         favIcon.setAttribute('class', 'fa-regular fa-heart');
         results.appendChild(favIcon);
@@ -250,6 +249,7 @@ favoritesLink.addEventListener('click', function() {
 homeLink.addEventListener('click', function() {
     homePage.setAttribute('data-state', 'visible');
     favoritesList.setAttribute('data-state', 'hidden');
+    favoritesList.innerHTML = ""
 })
 
 criteriaBtn.addEventListener('click', function() {
@@ -260,9 +260,4 @@ criteriaBtn.addEventListener('click', function() {
     })
 })
 
-
-
-
-
 getSavedBooks()
-renderFavorites()
