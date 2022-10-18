@@ -44,34 +44,53 @@ function renderFavorites() {
         console.log(savedBook)
 
         var card = document.createElement('div');
-        card.setAttribute('style', 'margin: 20px; background: yellow; text-align: center; width: 700px; padding: 15px')
-        card.setAttribute('class', i)
+        card.setAttribute('class', 'card');
         favoritesList.appendChild(card);
+
+        var cardImg = document.createElement('div');
+        cardImg.setAttribute('class', 'card-image');
+        card.appendChild(cardImg);
+
+        var figure = document.createElement('figure')
+        figure.setAttribute('class', 'image is-4by3')
+        cardImg.appendChild(figure)
 
         var coverImg = document.createElement('img');
         coverImg.setAttribute('src', savedBook.cover);
         coverImg.setAttribute('alt', 'Book image not found for' + savedBook.title);
-        card.appendChild(coverImg)
+        figure.appendChild(coverImg)
 
-        var favoriteTitle = document.createElement('h3');
+        var cardContent = document.createElement('div')
+        cardContent.setAttribute('class', 'card-content')
+        card.appendChild(cardContent)
+
+        var cardMedia = document.createElement('div')
+        cardMedia.setAttribute('class', 'media')
+        cardContent.appendChild(cardMedia)
+
+        var mediaContent = document.createElement('div')
+        mediaContent.setAttribute('class', 'media-content')
+        cardMedia.appendChild(mediaContent)
+
+        var favoriteTitle = document.createElement('p');
+        favoriteTitle.setAttribute('class', 'title is-4')
         favoriteTitle.textContent = savedBook.title;
         card.appendChild(favoriteTitle);
 
-        // for future development
-        // var clearBtn = document.createElement('button');
-        // clearBtn.setAttribute('class', i)
-        // clearBtn.textContent = 'Delete';
-        // card.appendChild(clearBtn)
+        var clearBtn = document.createElement('button');
+        clearBtn.setAttribute('class', i)
+        clearBtn.textContent = 'Delete';
+        card.appendChild(clearBtn)
         
-        // var btnNum = clearBtn.getAttribute('class');
-        // console.log(btnNum)
-        
-        // clearBtn.addEventListener('click', function() {
-        //     favorites.splice(btnNum, 1);
-        //     console.log(favorites)
-        //     renderFavorites()
-        //     console.log('delete')
-        // })
+        clearBtn.addEventListener('click', function(event) {
+            var btnNum = Number(event.target.getAttribute('class'));
+            console.log(btnNum)
+            favorites.splice(btnNum, 1);
+            console.log(favorites)
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            renderFavorites()
+            console.log('delete')
+        })
     }
     
 }
