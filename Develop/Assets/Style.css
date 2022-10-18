@@ -91,3 +91,12 @@ img {
     border-radius: 
   }
   /*DAS CONK CRETE BAYBEE*/
+
+  .modal-card-head, .modal-card-title {
+    background: #1b6273;
+    color: white;
+  }
+
+  .modal-card-body {
+    background-color: #f2eecb;
+  }
