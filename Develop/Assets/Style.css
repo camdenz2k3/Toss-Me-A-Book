@@ -13,6 +13,10 @@ header {
   padding: 10px;
 }
 
+header a {
+    color: #f2eecb;
+}
+
 text-primary {
     font-family: URW Chancery L, cursive
 }
@@ -37,20 +41,22 @@ main
 /*text css*/
 h1 {
     font-family: Bookman, URW Bookman L, serif;
+    font-size: 50px;
 }
 h2 {
-
+    font-size: 25px;
 }
 
 h3 {
     font-size: 25px;
-    margin: 10px;
+    margin: 5px;
     text-decoration: underline;
 
 }
 
 h4 {
-    font-size: 15px;
+    font-size: 20px;
+    margin: 5px;
 }
 /*buttons*/
 a {
@@ -82,12 +88,28 @@ img {
     max-height: 300px;
 }
 
+.fa-solid {
+    color: pink;
+    font-size: 25px;
+}
+
+.fa-regular {
+    font-size: 25px;
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: auto;
+    margin: 35px auto;
     text-align: center;
     font-family: arial;
-    border-radius: 
+    border-radius: 5px;
+    background-color: #f2eecb;
   }
+
+  .card-content {
+    padding: 10px;
+  }
+
+
   /*DAS CONK CRETE BAYBEE*/
