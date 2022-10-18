@@ -10,6 +10,7 @@ header {
   font-size: 30px;
   border-bottom: #E1C16E 5px;
   border-style: groove;
+  padding: 10px;
 }
 
 text-primary {
@@ -35,9 +36,8 @@ main
 
 /*text css*/
 h1 {
-    font-family: 
+    font-family: Bookman, URW Bookman L, serif;
 }
-
 h2 {
 
 }
@@ -53,6 +53,14 @@ h4 {
     font-size: 15px;
 }
 /*buttons*/
+a {
+    margin: 5px 15px 10px 15px;
+    padding: 5px;
+}
+a:hover {
+    background-color: #f2eecb;
+    border-radius: 5px;
+}
 button {
     border: solid #b5a642;
     border-radius: 20px;
