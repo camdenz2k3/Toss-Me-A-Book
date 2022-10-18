@@ -9,16 +9,80 @@ var searchInput = document.getElementById('search-input');
 var selectCat = document.getElementById('format-input')
 
 var results = document.createElement('div');
-body.appendChild(results);
+homePage.appendChild(results);
 
 var APIKey = 'wb2uvHErZufqaDA4aEQjDBE7jQBpEfkX';
+var isbnNum = "";
+var favorites = []
 
+function saveRandomBook(randomBook) {
+    console.log(isbnNum)
+    isbnNum = {
+        cover: randomBook.book_image,
+        title: randomBook.title
+    }
+    console.log(isbnNum)
+    favorites.push(isbnNum);
+    console.log(favorites)
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
 
+function getSavedBooks() {
+    var savedBooks = JSON.parse(localStorage.getItem('favorites'));
+    console.log(savedBooks);
+    
+    if (savedBooks !== null) {
+        favorites = savedBooks;
+    }
+}
+
+function renderFavorites() {
+    favoritesList.innerHTML = ""
+
+    for (var i = 0; i < favorites.length; i++) {
+        var savedBook = favorites[i];
+        console.log(savedBook)
+
+        var card = document.createElement('div');
+        card.setAttribute('style', 'margin: 20px; background: yellow; text-align: center; width: 700px; padding: 15px')
+        card.setAttribute('class', i)
+        favoritesList.appendChild(card);
+
+        var coverImg = document.createElement('img');
+        coverImg.setAttribute('src', savedBook.cover);
+        coverImg.setAttribute('alt', 'Book image not found for' + savedBook.title);
+        card.appendChild(coverImg)
+
+        var favoriteTitle = document.createElement('h3');
+        favoriteTitle.textContent = savedBook.title;
+        card.appendChild(favoriteTitle);
+
+        // for future development
+        // var clearBtn = document.createElement('button');
+        // clearBtn.setAttribute('class', i)
+        // clearBtn.textContent = 'Delete';
+        // card.appendChild(clearBtn)
+        
+        // var btnNum = clearBtn.getAttribute('class');
+        // console.log(btnNum)
+        
+        // clearBtn.addEventListener('click', function() {
+        //     favorites.splice(btnNum, 1);
+        //     console.log(favorites)
+        //     renderFavorites()
+        //     console.log('delete')
+        // })
+    }
+    
+}
+
+function removeFavorite() {
+    favorites.pop();
+    console.log(favorites)
+}
 
 function getCriteriaBook(event) {
     event.preventDefault()
-
-    
 
     while (results.hasChildNodes()) {
         results.removeChild(results.firstChild);
@@ -54,12 +118,11 @@ function getCriteriaBook(event) {
         criteriaAuthor.textContent = bookRandom.author_name;
         results.appendChild(criteriaAuthor);
 
-
-        //Possibly create function in global scope
         var newBookBtn = document.createElement('button');
         newBookBtn.textContent = 'Choose New Book';
         results.appendChild(newBookBtn);
-
+        
+        //Possibly create function in global scope
         var favIcon = document.createElement('i');
         favIcon.setAttribute('class', 'fa-regular fa-heart');
         results.appendChild(favIcon);
@@ -101,6 +164,8 @@ function getRandomBook(event) {
         var randomBook = randomList.books[Math.floor(Math.random() * randomList.books.length)]
         console.log(randomBook)
 
+        isbnNum = randomBook.primary_isbn13
+
         var img = document.createElement('img');
         img.setAttribute('src', randomBook.book_image);
         img.setAttribute('alt', 'Book image not found for' + randomBook.title);
@@ -138,9 +203,11 @@ function getRandomBook(event) {
             if (favIcon.classList.contains('fa-regular')) {
                 favIcon.classList.remove('fa-regular')
                 favIcon.classList.add('fa-solid')
+                saveRandomBook(randomBook)
             } else if (favIcon.classList.contains('fa-solid')) {
                 favIcon.classList.remove('fa-solid')
                 favIcon.classList.add('fa-regular')
+                removeFavorite()
             }
         })
 
@@ -154,9 +221,14 @@ randomBtn.addEventListener('click', getRandomBook)
 favoritesLink.addEventListener('click', function() {
     homePage.setAttribute('data-state', 'hidden');
     favoritesList.setAttribute('data-state', 'visible');
+    getSavedBooks()
+    renderFavorites()
 })
 
 homeLink.addEventListener('click', function() {
     homePage.setAttribute('data-state', 'visible');
     favoritesList.setAttribute('data-state', 'hidden');
 })
+
+getSavedBooks()
+renderFavorites()
