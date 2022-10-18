@@ -8,7 +8,8 @@ header {
   background: #1b6273;
   color: white;
   font-size: 30px;
-  border-bottom: #E1C16E;
+  border-bottom: #E1C16E 5px;
+  border-style: groove;
 }
 
 text-primary {
@@ -32,7 +33,25 @@ main
     text-align: center;
 }
 
+/*text css*/
+h1 {
+    font-family: 
+}
 
+h2 {
+
+}
+
+h3 {
+    font-size: 25px;
+    margin: 10px;
+    text-decoration: underline;
+
+}
+
+h4 {
+    font-size: 15px;
+}
 /*buttons*/
 button {
     border: solid #b5a642;
@@ -42,6 +61,7 @@ button {
     border-width: 1px;
     font-size: 15px;
     padding: 10px;
+    margin: 15px;
 }
 
 button:hover {
@@ -53,11 +73,13 @@ button:hover {
 img {
     max-height: 300px;
 }
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
     text-align: center;
     font-family: arial;
+    border-radius: 
   }
-  
+  /*DAS CONK CRETE BAYBEE*/

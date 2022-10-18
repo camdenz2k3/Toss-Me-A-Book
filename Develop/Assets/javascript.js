@@ -114,7 +114,7 @@ function getCriteriaBook(event) {
         criteriaTitle.textContent = bookRandom.title;
         results.appendChild(criteriaTitle);
 
-        var criteriaAuthor = document.createElement('h3');
+        var criteriaAuthor = document.createElement('h4');
         criteriaAuthor.textContent = bookRandom.author_name;
         results.appendChild(criteriaAuthor);
 
@@ -171,11 +171,11 @@ function getRandomBook(event) {
         img.setAttribute('alt', 'Book image not found for' + randomBook.title);
         results.appendChild(img)
 
-        var title = document.createElement('h2');
+        var title = document.createElement('h3');
         title.textContent = randomBook.title;
         results.appendChild(title);
 
-        var author = document.createElement('h3');
+        var author = document.createElement('h4');
         author.textContent = randomBook.author;
         results.appendChild(author);
 
