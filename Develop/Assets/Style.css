@@ -5,12 +5,12 @@
 /* header css*/
 header {
     text-align: center;
-  background: #1b6273;
-  color: white;
-  font-size: 30px;
-  border-bottom: #E1C16E 5px;
-  border-style: groove;
-  padding: 10px;
+    background: #1b6273;
+    color: white;
+    font-size: 30px;
+    border-bottom: #E1C16E 5px;
+    border-style: groove;
+    padding: 10px;
 }
 
 header a {
@@ -96,7 +96,7 @@ img {
 }
 
 .fa-solid {
-    color: pink;
+    color: #f33a6a;
     font-size: 25px;
 }
 
@@ -112,8 +112,13 @@ img {
     font-family: arial;
     border-radius: 5px;
     background-color: #f2eecb;
+    border: solid #1b6273;
   }
 
+  .card button {
+    margin: 0px;
+  }
+  
   .card-content {
     padding: 10px;
   }

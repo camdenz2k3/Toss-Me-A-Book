@@ -18,6 +18,7 @@ var APIKey = 'wb2uvHErZufqaDA4aEQjDBE7jQBpEfkX';
 var isbnNum = "";
 var favorites = []
 
+// saves the cover and title of random book to local storage
 function saveRandomBook(randomBook) {
     console.log(isbnNum)
     isbnNum = {
@@ -30,6 +31,7 @@ function saveRandomBook(randomBook) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
+// gets the cover and title of the random books saved to local storage
 function getSavedBooks() {
     var savedBooks = JSON.parse(localStorage.getItem('favorites'));
     console.log(savedBooks);
@@ -39,6 +41,7 @@ function getSavedBooks() {
     }
 }
 
+// renders the cover and title of the random books saved to local storage to favorites list
 function renderFavorites() {
     favoritesList.innerHTML = ""
 
@@ -85,6 +88,7 @@ function renderFavorites() {
         clearBtn.textContent = 'Delete';
         card.appendChild(clearBtn)
         
+        // deletes the corresponding book from local storage and favorites list
         clearBtn.addEventListener('click', function(event) {
             var btnNum = Number(event.target.getAttribute('class'));
             console.log(btnNum)
@@ -107,6 +111,7 @@ function getCriteriaBook(event) {
     event.preventDefault()
     modal.classList.remove('is-active')
 
+    // clears the results section
     while (results.hasChildNodes()) {
         results.removeChild(results.firstChild);
     }
@@ -164,6 +169,7 @@ function getCriteriaBook(event) {
 function getRandomBook(event) {
     event.preventDefault()
 
+    // clears the results section
     while (results.hasChildNodes()) {
         results.removeChild(results.firstChild);
     }
@@ -217,6 +223,7 @@ function getRandomBook(event) {
 
         newBookBtn.addEventListener('click',getRandomBook)
 
+        // toggles between filled in and not filled in heart icon
         favIcon.addEventListener('click', function() {
             if (favIcon.classList.contains('fa-regular')) {
                 favIcon.classList.remove('fa-regular')
