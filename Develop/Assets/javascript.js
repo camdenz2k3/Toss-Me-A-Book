@@ -144,10 +144,6 @@ function getCriteriaBook(event) {
         var newBookBtn = document.createElement('button');
         newBookBtn.textContent = 'Choose New Book';
         results.appendChild(newBookBtn);
-        
-        var favIcon = document.createElement('i');
-        favIcon.setAttribute('class', 'fa-regular fa-heart');
-        results.appendChild(favIcon);
 
         newBookBtn.addEventListener('click',getCriteriaBook)
 
