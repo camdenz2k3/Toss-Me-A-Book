@@ -21,6 +21,10 @@ In this application,
 -   [Books API](https://developer.nytimes.com/docs/books-product/1/overview)
 
 ## Visuals
+![random book](Develop/Assets/images/random-book.png)
 
+![criteria modal](Develop/Assets/images/criteria-modal.png)
+
+![favorites list](Develop/Assets/images/favorites-list.png)
 
 ## Deployed Link
