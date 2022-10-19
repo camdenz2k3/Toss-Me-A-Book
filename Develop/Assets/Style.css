@@ -58,6 +58,13 @@ h4 {
     font-size: 20px;
     margin: 5px;
 }
+
+h5 {
+    font-size: 20px;
+    background-color: #f2eecb;
+    border-style: groove;
+
+}
 /*buttons*/
 a {
     margin: 5px 15px 10px 15px;
@@ -111,8 +118,17 @@ img {
     padding: 10px;
   }
 
-  .modal-card-head, .modal-card-title {
+  .modal-card-head {
+    text-align: center;
     background: #1b6273;
+    color: white;
+    font-size: 30px;
+    border-bottom: #E1C16E 5px;
+    border-style: groove;
+    padding: 10px;
+  }
+
+  .modal-card-title {
     color: white;
   }
 
