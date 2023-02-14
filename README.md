@@ -28,3 +28,5 @@ In this application,
 ![favorites list](Assets/images/favorites-list.png)
 
 ## Deployed Link
+
+https://camdenz2k3.github.io/Toss-Me-A-Book-/
